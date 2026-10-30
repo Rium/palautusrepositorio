@@ -1,2 +1,2 @@
 # palautusrepositorio
-Ohtun tehtävien palautusrepo
+https://github.com/Rium/ohtuvarasto
