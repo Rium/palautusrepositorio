@@ -1,7 +1,6 @@
 from rich.console import Console
 from rich.table import Table
 from rich.prompt import Prompt
-from rich import print as rprint
 from player_reader import PlayerReader
 from player_stats import PlayerStats
 
@@ -11,12 +10,7 @@ def main():
     stats = PlayerStats(reader)
 
     nationality = Prompt.ask("Choose nationality")
-    table = Table(title=f"[italic]Season 2024-25 players from {nationality}[/italic]")
-    table.add_column("Name", style="cyan")
-    table.add_column("Teams", style="purple")
-    table.add_column("Goals", style="green")
-    table.add_column("Assists", style="green")
-    table.add_column("Points", style="green")
+    table = make_table(nationality)
 
     players = stats.top_scorers_by_nationality(nationality)
 
@@ -24,6 +18,18 @@ def main():
         data = player[1]
         table.add_row(f"{data[0]}", f"{data[2]}", f"{data[3]}", f"{data[4]}", f"{data[5]}")
 
+    print_table(table)
+
+def make_table(nationality):
+    table = Table(title=f"[italic]Season 2024-25 players from {nationality}[/italic]")
+    table.add_column("Name", style="cyan")
+    table.add_column("Teams", style="purple")
+    table.add_column("Goals", style="green")
+    table.add_column("Assists", style="green")
+    table.add_column("Points", style="green")
+    return table
+
+def print_table(table):
     console = Console()
     console.print(table)
 

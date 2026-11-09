@@ -12,5 +12,5 @@ class PlayerReader:
         for player_dict in request:
             player = Player(player_dict)
             players.append(player)
-        
+
         return players
