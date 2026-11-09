@@ -21,7 +21,7 @@ disable=raw-checker-failed,
         missing-timeout
 
 [FORMAT]
-max-line-length=100
+max-line-length=125
 indent-string='    '
 
 [REFACTORING]
