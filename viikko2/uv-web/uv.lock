@@ -306,19 +306,13 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },
-    { name = "sqlalchemy" },
-]
-
-[package.dev-dependencies]
-dev = [
     { name = "pytest" },
+    { name = "sqlalchemy" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "fastapi", specifier = ">=0.162.2" },
+    { name = "pytest", specifier = ">=9.2.0" },
     { name = "sqlalchemy", specifier = "==1.4.54" },
 ]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=9.2.0" }]
